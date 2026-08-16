@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Avery Lane Models — Elite Model Management</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --ink:#130b10;
+    --ink-soft:#5a4a53;
+    --magenta:#c81169;
+    --magenta-bright:#e91e8c;
+    --magenta-deep:#5c0836;
+    --magenta-deeper:#2c0619;
+    --blush:#fbe6ef;
+    --blush-deep:#f6d3e3;
+    --cream:#fdfaf9;
+    --panel:#f3efee;
+    --line:rgba(19,11,16,0.12);
+    --gold:#d8b989;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+    font-size:17px;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1560px;margin:0 auto;padding:0 48px;}
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.05;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 30px;
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+    border-radius:3px;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    white-space:nowrap;
+  }
+  .btn-magenta{background:var(--magenta);color:#fff;box-shadow:0 10px 24px -8px rgba(200,17,105,.55);}
+  .btn-magenta:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(200,17,105,.65);}
+  .btn-ink{background:var(--ink);color:#fff;}
+  .btn-ink:hover{transform:translateY(-2px);}
+  .btn-outline{background:transparent;color:var(--ink);border:1px solid var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:#fff;}
+  .btn-outline-light{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55);}
+  .btn-outline-light:hover{background:#fff;color:var(--ink);}
+
+  /* ===== HEADER ===== */
+  header{
+    background:var(--ink);
+    position:sticky;top:0;z-index:50;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 48px;max-width:1560px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:50%;
+    background:linear-gradient(135deg,var(--magenta-bright),var(--magenta-deep));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;color:#fff;font-size:15px;
+  }
+  .brand-name{color:#fff;font-family:'Fraunces',serif;font-size:17px;letter-spacing:.03em;}
+  .brand-name span{display:block;font-family:'Inter',sans-serif;font-size:9px;letter-spacing:.24em;color:var(--magenta-bright);font-weight:700;margin-top:2px;}
+  .nav-links{display:flex;align-items:center;gap:34px;}
+  .nav-links a{color:rgba(255,255,255,.78);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;transition:color .2s;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{
+    border:1px solid var(--magenta-bright);color:var(--magenta-bright);
+    padding:10px 22px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+    border-radius:3px;transition:all .2s;
+  }
+  .nav-cta:hover{background:var(--magenta-bright);color:#fff;}
+  .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;line-height:1;}
+  .nav-actions{display:flex;align-items:center;gap:18px;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse 900px 500px at 15% 0%, rgba(233,30,140,.35), transparent 60%),
+      linear-gradient(160deg, var(--magenta-deeper) 0%, var(--ink) 55%, var(--ink) 100%);
+    overflow:hidden;
+    padding:74px 0 0;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:repeating-linear-gradient(115deg, rgba(255,255,255,.05) 0 1px, transparent 1px 90px);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.05fr 1fr;gap:48px;
+    align-items:center;
+    padding-bottom:56px;
+  }
+  .hero-eyebrow{color:var(--magenta-bright);margin-bottom:22px;}
+  .hero h1{
+    color:#fff;
+    font-size:clamp(46px,5.4vw,76px);
+    letter-spacing:-.01em;
+    margin-bottom:26px;
+  }
+  .hero h1 em{font-style:italic;color:var(--magenta-bright);}
+  .hero-rule{width:64px;height:3px;background:var(--magenta-bright);margin-bottom:30px;}
+  .hero p.lede{color:rgba(255,255,255,.7);font-size:18.5px;line-height:1.75;max-width:520px;margin-bottom:38px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+
+  .hero-stats{
+    position:relative;z-index:2;
+    margin-top:20px;
+  }
+  .hero-stats-inner{
+    display:flex;gap:0;
+    max-width:1560px;margin:0 auto;padding:0 48px;
+  }
+  .stat{flex:1;padding:26px 24px 40px;border-right:1px solid rgba(255,255,255,.08);}
+  .stat:first-child{padding-left:0;}
+  .stat:last-child{border-right:none;}
+  .stat b{display:block;color:#fff;font-family:'Fraunces',serif;font-size:32px;font-weight:500;}
+  .stat span{color:rgba(255,255,255,.55);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;}
+
+  /* photo collage */
+  .collage{
+    position:relative;height:600px;
+    display:grid;
+    grid-template-columns:1.15fr 1fr;
+    grid-template-rows:1.2fr 1fr 1fr;
+    grid-template-areas:
+      "big topright"
+      "big midright"
+      "botleft midright";
+    gap:18px;
+  }
+  .ph{
+    border-radius:6px;
+    border:1px dashed rgba(255,255,255,.4);
+    background:linear-gradient(150deg,#3a1226,#170710);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+    color:rgba(255,255,255,.45);
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    padding:10px;
+  }
+  .ph span{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,.6);text-transform:none;letter-spacing:0;display:block;margin-top:4px;}
+  .ph-1{grid-area:big;}
+  .ph-2{grid-area:topright;}
+  .ph-3{grid-area:midright;}
+  .ph-4{grid-area:botleft;}
+  .featured-card{
+    position:absolute;left:14px;top:64%;transform:translateY(-50%);
+    background:rgba(19,11,16,.94);
+    border:1px solid rgba(233,30,140,.4);
+    border-radius:6px;
+    padding:16px 18px;width:200px;
+    z-index:3;
+    box-shadow:0 20px 40px -18px rgba(0,0,0,.6);
+  }
+  .featured-card .fc-label{color:var(--magenta-bright);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:6px;}
+  .featured-card h4{font-family:'Fraunces',serif;color:#fff;font-size:16px;font-weight:500;margin-bottom:6px;}
+  .featured-card p{color:rgba(255,255,255,.55);font-size:11.5px;line-height:1.5;}
+
+  /* ===== QUOTE SECTION ===== */
+  .quote-section{
+    background:linear-gradient(160deg,var(--blush) 0%, var(--blush-deep) 100%);
+    padding:72px 0;
+  }
+  .quote-section h2{
+    font-size:clamp(32px,4.2vw,52px);
+    max-width:920px;
+    margin-bottom:72px;
+    font-style:italic;
+    font-weight:400;
+  }
+  .quote-grid{display:grid;grid-template-columns:0.85fr 1fr;gap:70px;align-items:flex-start;}
+  .quote-img{
+    aspect-ratio:4/3.1;max-height:460px;border-radius:6px;
+    border:1px dashed rgba(19,11,16,.3);
+    background:linear-gradient(150deg,#f3d7e6,#e8b9d1);
+    display:flex;align-items:center;justify-content:center;
+    color:rgba(19,11,16,.4);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:20px;
+  }
+  .quote-img span{display:block;font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:rgba(19,11,16,.55);text-transform:none;margin-top:6px;}
+  .quote-stat{color:var(--magenta);font-weight:600;}
+  .quote-copy p{font-size:18.5px;line-height:1.8;color:var(--ink-soft);margin-bottom:22px;}
+  .pull-box{
+    background:#fff;border-left:3px solid var(--magenta);
+    padding:28px 30px;margin:32px 0 34px;border-radius:2px;
+    box-shadow:0 20px 40px -20px rgba(19,11,16,.15);
+  }
+  .pull-box p{font-style:italic;font-family:'Fraunces',serif;font-size:19px;color:var(--ink);line-height:1.65;font-weight:400;}
+
+  /* ===== DIVISIONS ===== */
+  .divisions{padding:80px 0;background:var(--cream);}
+  .section-head{text-align:center;max-width:720px;margin:0 auto 52px;}
+  .section-head .eyebrow{color:var(--magenta);display:block;margin-bottom:16px;text-align:center;}
+  .section-head h2{font-size:clamp(34px,3.9vw,48px);margin-bottom:18px;}
+  .section-head p{color:var(--ink-soft);font-size:17px;line-height:1.65;}
+
+  .division-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .division-card{
+    border:1px solid var(--line);border-radius:8px;overflow:hidden;
+    background:#fff;transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .division-card:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(19,11,16,.28);}
+  .division-img{
+    position:relative;aspect-ratio:4/3;
+    background:linear-gradient(150deg,#3a1226,#150610);
+    border-bottom:1px dashed rgba(255,255,255,.25);
+    display:flex;align-items:flex-end;padding:18px;
+  }
+  .division-badge{
+    position:absolute;top:14px;right:14px;
+    background:var(--magenta);color:#fff;font-size:10px;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:20px;
+  }
+  .division-tag{color:var(--magenta-bright);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:6px;}
+  .division-img h3{color:#fff;font-size:26px;letter-spacing:.02em;}
+  .division-body{padding:26px 26px 28px;}
+  .division-body .sub{color:var(--ink-soft);font-style:italic;font-family:'Fraunces',serif;font-size:15.5px;margin-bottom:12px;}
+  .division-body p{color:var(--ink-soft);font-size:15px;line-height:1.65;margin-bottom:20px;}
+  .division-meta{display:flex;gap:18px;font-size:12.5px;color:var(--ink-soft);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--line);}
+  .division-meta span{display:flex;align-items:center;gap:6px;}
+  .division-foot{display:flex;align-items:center;justify-content:space-between;}
+  .division-foot .label-sm{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#a3939a;margin-bottom:4px;}
+  .division-foot .val{font-family:'Fraunces',serif;font-size:21px;}
+  .division-foot .btn{padding:12px 20px;font-size:12px;}
+
+  /* ===== RESOURCES ===== */
+  .resources{background:var(--panel);padding:80px 0;}
+  .resource-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:44px;}
+  .resource-card{
+    background:#fff;border:1px solid var(--line);border-radius:8px;padding:32px;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .resource-top{display:flex;justify-content:space-between;align-items:flex-start;}
+  .resource-icon{
+    width:52px;height:52px;border-radius:8px;
+    background:var(--blush);color:var(--magenta);
+    display:flex;align-items:center;justify-content:center;font-size:22px;
+  }
+  .resource-pill{
+    border:1px solid var(--line);border-radius:16px;padding:5px 12px;
+    font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;
+  }
+  .resource-card h3{font-size:27px;margin-bottom:5px;}
+  .resource-card .sub{color:var(--ink-soft);font-style:italic;font-family:'Fraunces',serif;font-size:15.5px;}
+  .resource-card p.desc{color:var(--ink-soft);font-size:15px;line-height:1.65;}
+  .resource-meta{display:flex;gap:32px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .resource-meta div span{display:block;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:#a3939a;margin-bottom:5px;}
+  .resource-meta div b{font-size:14.5px;font-weight:600;}
+  .resource-foot{display:flex;align-items:center;justify-content:space-between;}
+  .resource-foot .val{font-family:'Fraunces',serif;font-size:26px;}
+  .resource-foot .label-sm{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#a3939a;margin-bottom:4px;}
+  .visit-shop{text-align:center;}
+
+  /* ===== CTA BANNER ===== */
+  .cta-banner{padding:64px 0;background:var(--cream);}
+  .cta-inner{
+    max-width:1560px;margin:0 auto;
+    position:relative;overflow:hidden;
+    background:linear-gradient(135deg,var(--magenta-deeper), var(--ink) 60%);
+    border-radius:10px;padding:64px 40px;text-align:center;
+  }
+  .cta-inner::before{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(115deg, rgba(233,30,140,.15) 0 1px, transparent 1px 60px);
+    pointer-events:none;
+  }
+  .cta-frame{
+    position:absolute;inset:14px;border:1px solid rgba(255,255,255,.18);border-radius:6px;pointer-events:none;
+  }
+  .cta-inner h2{position:relative;z-index:2;color:#fff;font-size:clamp(32px,4.2vw,52px);font-style:italic;margin-bottom:18px;}
+  .cta-inner p{position:relative;z-index:2;color:rgba(255,255,255,.68);max-width:600px;margin:0 auto 36px;font-size:17px;line-height:1.75;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--ink);color:rgba(255,255,255,.6);padding:80px 0 0;position:relative;overflow:hidden;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .footer-brand p{font-size:13px;line-height:1.7;margin-top:14px;max-width:230px;color:rgba(255,255,255,.45);}
+  .footer-col h5{color:#fff;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px;font-weight:700;}
+  .footer-col a{display:block;font-size:13.5px;color:rgba(255,255,255,.55);margin-bottom:12px;transition:color .2s;}
+  .footer-col a:hover{color:#fff;}
+  .footer-social{display:flex;gap:12px;margin-top:6px;}
+  .footer-social a{
+    width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.06);
+    display:flex;align-items:center;justify-content:center;font-size:13px;margin:0;
+  }
+  .footer-social a:hover{background:var(--magenta);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px 0;font-size:12px;color:rgba(255,255,255,.4);
+  }
+  footer{padding-bottom:8px;}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:980px){
+    .nav-links{
+      display:none;
+      position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;align-items:flex-start;gap:0;
+      background:var(--ink);
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      padding:8px 0;
+    }
+    .nav-links.is-open{display:flex;}
+    .nav-links a{width:100%;padding:14px 48px;}
+    .nav-links a:hover{background:rgba(255,255,255,.05);}
+    header{position:relative;}
+    .nav-toggle{display:block;}
+    .hero-inner{grid-template-columns:1fr;padding-top:24px;}
+    .collage{height:460px;margin-top:20px;gap:12px;}
+    .featured-card{width:170px;padding:14px 16px;}
+    .quote-grid{grid-template-columns:1fr;gap:36px;}
+    .division-grid{grid-template-columns:1fr;}
+    .resource-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .hero-inner{padding:0 0 40px;}
+    .nav{padding:16px 20px;}
+    .brand-name{font-size:15px;}
+    .nav-cta{padding:8px 14px;font-size:10.5px;}
+    .nav-actions{gap:12px;}
+    .hero-stats-inner{flex-wrap:wrap;padding:0 20px;}
+    .stat{flex:1 1 50%;border-right:none;border-bottom:1px solid rgba(255,255,255,.1);}
+    .quote-section{padding:64px 0;}
+    .divisions,.resources{padding:72px 0;}
+    .cta-banner{padding:64px 0;}
+    .cta-inner{padding:60px 22px;}
+    .footer-grid{grid-template-columns:1fr;gap:30px;}
+    .footer-bottom{flex-direction:column;gap:10px;text-align:center;}
+    .division-meta{flex-wrap:wrap;}
+    .collage{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr 1fr;height:520px;}
+    .featured-card{position:static;width:100%;margin-top:0;transform:none;grid-column:1/-1;box-sizing:border-box;}
+    .resource-meta{flex-wrap:wrap;row-gap:10px;}
+  }
+</style>
+</head>
+<body>
+<header>
+<div class="nav wrap" style="padding-left:0;padding-right:0;">
+<div class="brand">
+<div class="brand-mark">A</div>
+<div class="brand-name">AVERY LANE<span>MODEL MANAGEMENT</span></div>
+</div>
+<nav class="nav-links">
+<a href="#talent">Talent</a>
+<a href="#divisions">Divisions</a>
+<a href="#method">The Method</a>
+<a href="#resources">Resources</a>
+<a href="#contact">Contact</a>
+</nav>
+<div class="nav-actions">
+<a class="nav-cta" href="#">Client Login</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="nav-toggle">☰</button>
+</div>
+</div>
+</header>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.innerHTML = isOpen ? '&times;' : '&#9776;';
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.innerHTML = '&#9776;';
+    });
+  });
+</script>
+<section class="hero">
+<div class="wrap hero-inner">
+<div>
+<span class="eyebrow hero-eyebrow">Elite Model Management</span>
+<h1>The New Standard<br/>in Model <em>Representation</em></h1>
+<div class="hero-rule"></div>
+<p class="lede">From first casting to global campaign. We build careers, not just bookings — join the agency that's placed 500+ faces on the world's biggest sets.</p>
+<div class="hero-actions">
+<a class="btn btn-magenta" href="#talent">View Our Talent Roster →</a>
+<a class="btn btn-outline-light" href="#method">Our Method</a>
+</div>
+</div>
+<div class="collage">
+<img alt="High-end editorial fashion portrait" class="ph ph-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgBg7bbRODouVS5GpStK-GkzKwL2-7hbp0vpcZu0YWT0hNMiaDLkyygcc0URSNo29JZFzz2BEtgEG3zOItaq8EN5FHoEp1KT4s5Jt5mm78Rr4iAEk0LM4eGX5ysUauR6nG0jlVfK9344NytYpNXszu3sUQtMo0kMLFoN1qB-FEDQhIye6QXOhVAusE9nNM2B7MaPcblBWRd6OVP0b4qDc0X7FmwmVHati6WXOi0_PIVx3_fHNT3OE8bA" style="object-fit: cover; width: 100%; height: 100%;"/>
+<img alt="Fashion model on runway" class="ph ph-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMNrev7CX25YUCQXVpHobTGZ1UUbXiK7LM8J9ed1EGHQ-2W1lOESpvXbY4oySb5YEupfIpnxmq-PRxVKesIrjY-eNOxlzRFLitOh8ab-aqW0mi52LhGVqV_PoMQOK9gnbuHepM_25Pk-kQlZDwb3TVhYp0HY6ekCRIhmnYFDYrH86E4dKPGZxdHnQNY6LZTCg_IvHBf-rC96Nlm94wDDhxQEjw6VjyKHSUnrAjqdMowAVST54HOM-TEQ" style="object-fit: cover; width: 100%; height: 100%;"/>
+<div class="featured-card">
+<div class="fc-label">Featured Division</div>
+<h4>Editorial &amp; Runway</h4>
+<p>Our flagship division for high-fashion placement.</p>
+</div>
+<img alt="High-fashion commercial campaign still" class="ph ph-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGSeYXq6O9ARQbkBUDakkb8LTCDsgfM5IcJgBTTvuCJa6rsjCpbiE1LWIbNiYV6ZOyHjxyY0-g7puAR_9yRMohLy_7coRzdlgo87IUo6SXUYaB5QKBnehdp-1NJM1LvRWSK0DJXRigIjhfUA6BqTNGLfv-LRB5BUDBJS-hQEjzK7IpYstdQASdY4wX7Sy0DoM0JVi2IWNhSMXYHs26rt0ElQMY5-vpn3wRtde9gabMa7T3dbkRHMXblg" style="object-fit: cover; width: 100%; height: 100%;"/>
+<img alt="Editorial studio portrait" class="ph ph-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgSj312yHHXPGXo2BnjqSeJLuQJ5vTyP_hqZies1YWT8RWcNTOerWHuRFfy190yh2k-TBQILODlukeXi2O5N6H22n4Mn-NzRycgeQjXyzFq0hpoFyULxVV9pewgXsNLwxFEqUl1Mci4PyXwlnsvoG0UP8tja4jK89xVKq1tnW4iNIO2cBEBVlh9zt5F0byaw1PYRIs4CFeBLv7VVoeQ8fITJmtio2pkYS1UFllptkxyWLGao_hQWj_sg" style="object-fit: cover; width: 100%; height: 100%;"/>
+</div>
+</div>
+<div class="hero-stats">
+<div class="hero-stats-inner">
+<div class="stat"><b>500+</b><span>Models Placed</span></div>
+<div class="stat"><b>12</b><span>Countries</span></div>
+<div class="stat"><b>8+</b><span>Years Experience</span></div>
+</div>
+</div>
+</section>
+<section class="quote-section" id="method">
+<div class="wrap">
+<h2>“Beauty gets you in the room. Being represented right is what keeps you in the industry.”</h2>
+<div class="quote-grid">
+<img alt="Model and agent reviewing portfolio" class="quote-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYqe5v2Ocf8NCzPOwEul5uP8OCGf11-m67txZoXq_iiERuTT3hDuCO1733lEeYT7H5yWCbci9dOmYHF3M9NoQh0rmqL894nadOXEtMUyWsbRlF928EGaeXuU_BZ3q11bDitRFhE-RQaR3WkylpaqELj34TfPdVYiSdOJNO1vPLzlOsXRmqSjZMf4KPbf34gTnMNLA_m1zv1-QwP0Is20m3Mhov-15OJBKYPIhJb4TlUK69zJI6e7O3FA" style="object-fit: cover; width: 100%; height: 100%;"/>
+<div class="quote-copy">
+<p><span class="quote-stat">73% of new models sign with the wrong agency first.</span> Not because they lack talent, but because they lack guidance.</p>
+<p>They know how to walk, how to pose, how to hold a look for the camera. But no one teaches them how to read a contract, negotiate a day rate, or say no to a job that isn't right for their brand.</p>
+<div class="pull-box">
+<p>My goal isn't just to book you jobs — it's to build your career. To position you as an in-demand name. To build something that gives you longevity, not just a moment.</p>
+</div>
+<p>This is the representation every model deserves from day one.</p>
+<a class="btn btn-magenta" href="#divisions">Discover The Method →</a>
+</div>
+</div>
+</div>
+</section>
+<section class="divisions" id="divisions">
+<div class="wrap">
+<div class="section-head">
+<span class="eyebrow">Representation Divisions</span>
+<h2>Three Divisions, One Standard</h2>
+<p>Every model is placed and managed within the division that fits their strengths, market, and career goals.</p>
+</div>
+<div class="division-grid">
+<div class="division-card">
+<div class="division-img" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgBg7bbRODouVS5GpStK-GkzKwL2-7hbp0vpcZu0YWT0hNMiaDLkyygcc0URSNo29JZFzz2BEtgEG3zOItaq8EN5FHoEp1KT4s5Jt5mm78Rr4iAEk0LM4eGX5ysUauR6nG0jlVfK9344NytYpNXszu3sUQtMo0kMLFoN1qB-FEDQhIye6QXOhVAusE9nNM2B7MaPcblBWRd6OVP0b4qDc0X7FmwmVHati6WXOi0_PIVx3_fHNT3OE8bA'); background-size: cover; background-position: center;">
+<div class="division-badge">Most Booked</div>
+<div>
+<span class="division-tag">Editorial &amp; Runway</span>
+<h3>High Fashion</h3>
+</div>
+</div>
+<div class="division-body">
+<p class="sub">From first casting to Fashion Week</p>
+<p>Representation for editorial, runway, and luxury campaign work. Positioned for the shows and publications that define a career.</p>
+<div class="division-meta">
+<span>● 120 Active Models</span>
+<span>● 4 Fashion Capitals</span>
+</div>
+<div class="division-foot">
+<div><span class="label-sm">Avg. Day Rate</span><span class="val">$1,200+</span></div>
+<a class="btn btn-magenta" href="#">View Division →</a>
+</div>
+</div>
+</div>
+<div class="division-card">
+<div class="division-img" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGSeYXq6O9ARQbkBUDakkb8LTCDsgfM5IcJgBTTvuCJa6rsjCpbiE1LWIbNiYV6ZOyHjxyY0-g7puAR_9yRMohLy_7coRzdlgo87IUo6SXUYaB5QKBnehdp-1NJM1LvRWSK0DJXRigIjhfUA6BqTNGLfv-LRB5BUDBJS-hQEjzK7IpYstdQASdY4wX7Sy0DoM0JVi2IWNhSMXYHs26rt0ElQMY5-vpn3wRtde9gabMa7T3dbkRHMXblg'); background-size: cover; background-position: center;">
+<div>
+<span class="division-tag">Commercial &amp; Lifestyle</span>
+<h3>Everyday Icon</h3>
+</div>
+</div>
+<div class="division-body">
+<p class="sub">The faces behind the biggest brands</p>
+<p>Placement for advertising, e-commerce, and lifestyle campaigns. Consistent, recurring bookings with major brands.</p>
+<div class="division-meta">
+<span>● 210 Active Models</span>
+<span>● 60+ Brand Partners</span>
+</div>
+<div class="division-foot">
+<div><span class="label-sm">Avg. Day Rate</span><span class="val">$650+</span></div>
+<a class="btn btn-magenta" href="#">View Division →</a>
+</div>
+</div>
+</div>
+<div class="division-card">
+<div class="division-img" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgSj312yHHXPGXo2BnjqSeJLuQJ5vTyP_hqZies1YWT8RWcNTOerWHuRFfy190yh2k-TBQILODlukeXi2O5N6H22n4Mn-NzRycgeQjXyzFq0hpoFyULxVV9pewgXsNLwxFEqUl1Mci4PyXwlnsvoG0UP8tja4jK89xVKq1tnW4iNIO2cBEBVlh9zt5F0byaw1PYRIs4CFeBLv7VVoeQ8fITJmtio2pkYS1UFllptkxyWLGao_hQWj_sg'); background-size: cover; background-position: center;">
+<div>
+<span class="division-tag">Fitness &amp; Beauty</span>
+<h3>Body of Work</h3>
+</div>
+</div>
+<div class="division-body">
+<p class="sub">Strength, skin, and confidence on camera</p>
+<p>Representation for fitness, wellness, and beauty campaigns — from activewear catalogs to skincare hero shots.</p>
+<div class="division-meta">
+<span>● 95 Active Models</span>
+<span>● 30+ Brand Partners</span>
+</div>
+<div class="division-foot">
+<div><span class="label-sm">Avg. Day Rate</span><span class="val">$550+</span></div>
+<a class="btn btn-magenta" href="#">View Division →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="resources" id="resources">
+<div class="wrap">
+<div class="section-head">
+<span class="eyebrow">Client Resources</span>
+<h2>Tools for the Working Model</h2>
+<p>Practical, agency-built resources designed to solve the everyday questions of a modeling career.</p>
+</div>
+<div class="resource-grid">
+<div class="resource-card">
+<div class="resource-top">
+<div class="resource-icon">💼</div>
+<div class="resource-pill">Digital Tool</div>
+</div>
+<div>
+<h3>Rate Calculator</h3>
+<p class="sub">Know your worth before you walk in</p>
+</div>
+<p class="desc">Built with our booking agents. Calculate a fair day rate by market, usage, and exclusivity — never underquote a job again.</p>
+<div class="resource-meta">
+<div><span>Delivery</span><b>Instant Download</b></div>
+<div><span>Format</span><b>Excel (.xlsx)</b></div>
+</div>
+<div class="resource-foot">
+<div><span class="label-sm">Investment</span><span class="val">$49</span></div>
+<a class="btn btn-ink" href="#">View Details →</a>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-top">
+<div class="resource-icon">📷</div>
+<div class="resource-pill">Digital Guide</div>
+</div>
+<div>
+<h3>Casting Prep Guide</h3>
+<p class="sub">150+ ways to walk in ready</p>
+</div>
+<p class="desc">Everything from callback etiquette to comp card layout. Never walk into a casting unprepared again.</p>
+<div class="resource-meta">
+<div><span>Delivery</span><b>Instant Download</b></div>
+<div><span>Format</span><b>PDF</b></div>
+</div>
+<div class="resource-foot">
+<div><span class="label-sm">Investment</span><span class="val">$79</span></div>
+<a class="btn btn-ink" href="#">View Details →</a>
+</div>
+</div>
+</div>
+<div class="visit-shop">
+<a class="btn btn-outline" href="#">Visit Shop →</a>
+</div>
+</div>
+</section>
+<section class="cta-banner">
+<div class="wrap">
+<div class="cta-inner">
+<div class="cta-frame"></div>
+<h2>Turning Presence into a Career.</h2>
+<p>From first casting to global campaign. Elevate your career with the agency that's redefining representation.</p>
+<a class="btn btn-magenta" href="#talent">Join The Roster →</a>
+</div>
+</div>
+</section>
+<footer id="contact">
+<div class="wrap">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="brand">
+<div class="brand-mark">A</div>
+<div class="brand-name">AVERY LANE<span>MODEL MANAGEMENT</span></div>
+</div>
+<p>Elite model management built on transparency. Know your rate, know your rights, know your worth.</p>
+</div>
+<div class="footer-col">
+<h5>Agency</h5>
+<a href="#">All Talent</a>
+<a href="#">Editorial &amp; Runway</a>
+<a href="#">Commercial &amp; Lifestyle</a>
+<a href="#">Fitness &amp; Beauty</a>
+<a href="#">The Method</a>
+</div>
+<div class="footer-col">
+<h5>Shop</h5>
+<a href="#">All Resources</a>
+<a href="#">Rate Calculator</a>
+<a href="#">Casting Prep Guide</a>
+</div>
+<div class="footer-col">
+<h5>About</h5>
+<a href="#">About Us</a>
+<a href="#">Contact Us</a>
+<a href="#">Client Login</a>
+</div>
+<div class="footer-col">
+<h5>Connect</h5>
+<div class="footer-social">
+<a href="#">i</a>
+<a href="#">t</a>
+<a href="#">w</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 Avery Lane Models. All Rights Reserved.</span>
+<span>Privacy &amp; Cookie Policy</span>
+</div>
+</div>
+</footer>
+</body>
+</html>
